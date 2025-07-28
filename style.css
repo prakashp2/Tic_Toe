@@ -1,0 +1,97 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1c1c1c 0%, #3a3a52 100%);
+    text-align: center;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Game title */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #333;
+}
+
+/* Game container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 18vmin);
+    grid-template-rows: repeat(3, 18vmin);
+    gap: 1.5vmin;
+}
+
+/* Each box */
+.box {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+#Reset-btn,
+#new-btn {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    margin: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Reset-btn:hover,
+#new-btn:hover {
+    background-color: #333;
+}
+
+/* Winner message */
+#msg {
+    color: #ffffc7;
+    font-size: 5vmin;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.msg-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.msg-container.show {
+    display: flex;
+}

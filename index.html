@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe - Landing</title>
+  <link rel="stylesheet" href="/PROJECT/TIC TOE/style.css" />
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe Landing</title>
+  <style>
+    body.landing-body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark blue gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .landing-layout {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .instruction-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 400px;
+      color: #fff;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .start-section {
+      text-align: center;
+    }
+
+    .start-section h1 {
+      font-size: 3rem;
+      color: #00ffff;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .start-btn {
+      padding: 1.5rem 3rem;
+      font-size: 1.5rem;
+      background-color: #00ffff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    }
+
+    .start-btn:hover {
+      background-color: #00cccc;
+      transform: scale(1.05);
+    }
+
+    .winner-msg {
+      color: #ffff00;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+  </style>
+</head>
+<body class="landing-body">
+  <div class="landing-layout">
+
+    <div class="instruction-box">
+      <h2>📋 Instructions</h2>
+      <p>🎮 This is a 2-player Tic Tac Toe game (X and O).</p>
+      <p>➤ Players take turns marking spaces in a 3X3 grid.</p>
+      <p>✅ First to place three marks in a row (horizontal, vertical, or diagonal) wins.</p>
+      <p>🤝 If all boxes are filled without a winner, it's a draw!</p>
+    </div>
+
+    <div class="start-section">
+      <h1>Tic Tac Toe</h1>
+      <div id="winner-announcement" class="winner-msg"></div>
+      <button class="start-btn" onclick="startGame()">Start Game</button>
+    </div>
+
+  </div>
+
+  <script>
+    function startGame() {
+      window.location.href = "/PROJECT/TIC TOE/game.html";
+    }
+
+    // Show winner if returned from game
+    const params = new URLSearchParams(window.location.search);
+    const winner = params.get("winner");
+    if (winner) {
+      document.getElementById("winner-announcement").innerText = `🎉 Winner: ${winner}`;
+    } else if (params.get("draw")) {
+      document.getElementById("winner-announcement").innerText = "🤝 It's a Draw!";
+    }
+  </script>
+</body>
+</html>
